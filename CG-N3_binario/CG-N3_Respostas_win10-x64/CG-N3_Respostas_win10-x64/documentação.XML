@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CG-N3_Respostas</name>
+    </assembly>
+    <members>
+        <member name="T:CG_Biblioteca.Privado_Matematica">
+            <summary>
+            Classe com funções matemáticas.
+            </summary>
+        </member>
+        <member name="F:gcgcg.Objeto.matrizTmpTranslacao">
+            Matrizes temporarias que sempre sao inicializadas com matriz Identidade entao podem ser "static".
+        </member>
+    </members>
+</doc>
