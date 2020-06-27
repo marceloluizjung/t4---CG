@@ -5,5 +5,8 @@ Classes utilizadas neste exemplo.
 
 by PlantUML.
 
-
+Aula
 https://web.microsoftstream.com/video/bcc5c8db-e5c8-400e-9f84-0808eb6d010b
+
+Cena
+http://gcg.inf.furb.br/visedu-cg/game/
