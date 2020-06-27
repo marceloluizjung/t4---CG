@@ -7,64 +7,23 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/CG-N4.csproj"
+                "${workspaceFolder}/CG-N4.csproj",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary"
             ],
-            "dependsOn": [
-                "CG_Biblioteca"
-            ],
-            "problemMatcher": "$tsc"
+            "problemMatcher": "$msCompile"
         },
         {
-            "label": "publishDebug",
+            "label": "publish",
             "command": "dotnet",
             "type": "process",
             "args": [
                 "publish",
-                "${workspaceFolder}/CG-N4.csproj"
+                "${workspaceFolder}/CG-N4.csproj",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary"
             ],
-            "problemMatcher": "$tsc"
-        },
-        {
-            "label": "publishRelease_win10-x64",
-            "command": "dotnet",
-            "type": "process",
-            "args": [
-                "publish",
-                "-c",
-                "release",
-                "-r",
-                "win10-x64",
-                "${workspaceFolder}/CG-N4.csproj"
-            ],
-            "problemMatcher": "$tsc"
-        },
-        {
-            "label": "publishRelease_ubuntu.16.10-x64",
-            "command": "dotnet",
-            "type": "process",
-            "args": [
-                "publish",
-                "-c",
-                "release",
-                "-r",
-                "ubuntu.16.10-x64",
-                "${workspaceFolder}/CG-N4.csproj"
-            ],
-            "problemMatcher": "$tsc"
-        },
-        {
-            "label": "publishRelease_osx-x64",
-            "command": "dotnet",
-            "type": "process",
-            "args": [
-                "publish",
-                "-c",
-                "release",
-                "-r",
-                "osx-x64",
-                "${workspaceFolder}/CG-N4.csproj"
-            ],
-            "problemMatcher": "$tsc"
+            "problemMatcher": "$msCompile"
         },
         {
             "label": "watch",
@@ -73,9 +32,11 @@
             "args": [
                 "watch",
                 "run",
-                "${workspaceFolder}/CG-N4.csproj"
+                "${workspaceFolder}/CG-N4.csproj",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary"
             ],
-            "problemMatcher": "$tsc"
+            "problemMatcher": "$msCompile"
         }
     ]
 }

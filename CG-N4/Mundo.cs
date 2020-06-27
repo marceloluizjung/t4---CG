@@ -60,24 +60,34 @@ namespace gcgcg
       Console.WriteLine(" --- Ajuda / Teclas: ");
       Console.WriteLine(" [  H     ] mostra teclas usadas. ");
 
-      obj_Retangulo = new Retangulo("A", null, new Ponto4D(-300, 250, 0), new Ponto4D(-250, 300, 0));
-      obj_Retangulo.PrimitivaCor = OpenTK.Color.Violet;
-      objetosLista.Add(obj_Retangulo);
+      obj_Cubo = new Cubo("Chao", null);
+      objetosLista.Add(obj_Cubo);
+      obj_Cubo.EscalaXYZ(7, 1, 5);
+      obj_Cubo.TranslacaoXYZ(3, -1, 2);
 
-      obj_Retangulo = new Retangulo("B", null, new Ponto4D(-250, 250, 0), new Ponto4D(-200, 300, 0));
-      obj_Retangulo.PrimitivaCor = OpenTK.Color.Violet;
-      objetosLista.Add(obj_Retangulo);
+      obj_Cubo = new Cubo("Barreira1", null);
+      objetosLista.Add(obj_Cubo);
+      obj_Cubo.TranslacaoXYZ(0, 0, 0);
 
-      objetoSelecionado = obj_Retangulo;
+      obj_Cubo = new Cubo("Barreira2", null);
+      objetosLista.Add(obj_Cubo);
+      obj_Cubo.TranslacaoXYZ(0, 0, 1);
 
-      camera.At = new Vector3(0, 0, 0);
-      camera.Eye = new Vector3(0, 0, 700);
-      camera.Near = 100.0f;
-      camera.Far = 2000.0f;
+      obj_Cubo = new Cubo("Personagem", null);
+      objetosLista.Add(obj_Cubo);
+      obj_Cubo.TranslacaoXYZ(1, 0, 3);
+
+      objetoSelecionado = obj_Cubo;
+
+      camera.Eye = new Vector3(3.5f, 8, 22);
+      camera.At = new Vector3(3.5f, 0.5f, 2.5f);
+      camera.Near = 0.1f;
+      camera.Far = 60.0f;
 
       GL.ClearColor(127,127,127,255);
       GL.Enable(EnableCap.DepthTest);
-      GL.Disable(EnableCap.CullFace);
+      GL.Enable(EnableCap.CullFace);
+      // GL.Disable(EnableCap.CullFace);
     }
     protected override void OnResize(EventArgs e)
     {
@@ -158,13 +168,13 @@ namespace gcgcg
           objetoSelecionado.AtribuirIdentidade();
         //TODO: não está atualizando a BBox com as transformações geométricas
         else if (e.Key == Key.Left)
-          objetoSelecionado.TranslacaoXYZ(-10, 0, 0);
+          objetoSelecionado.TranslacaoXYZ(-0.1, 0, 0);
         else if (e.Key == Key.Right)
-          objetoSelecionado.TranslacaoXYZ(10, 0, 0);
+          objetoSelecionado.TranslacaoXYZ(0.1, 0, 0);
         else if (e.Key == Key.Up)
-          objetoSelecionado.TranslacaoXYZ(0, 10, 0);
+          objetoSelecionado.TranslacaoXYZ(0, 0, -0.1);
         else if (e.Key == Key.Down)
-          objetoSelecionado.TranslacaoXYZ(0, -10, 0);
+          objetoSelecionado.TranslacaoXYZ(0, 0, 0.1);
         else if (e.Key == Key.Number8)
           objetoSelecionado.TranslacaoXYZ(0, 0, 10);
         else if (e.Key == Key.Number9)
@@ -217,11 +227,11 @@ namespace gcgcg
       GL.LineWidth(1);
       GL.Begin(PrimitiveType.Lines);
       GL.Color3(OpenTK.Color.Red);
-      GL.Vertex3(0, 0, 0); GL.Vertex3(300, 0, 0);
+      GL.Vertex3(0, 0, 0); GL.Vertex3(200, 0, 0);
       GL.Color3(OpenTK.Color.Green);
-      GL.Vertex3(0, 0, 0); GL.Vertex3(0, 300, 0);
+      GL.Vertex3(0, 0, 0); GL.Vertex3(0, 200, 0);
       GL.Color3(OpenTK.Color.Blue);
-      GL.Vertex3(0, 0, 0); GL.Vertex3(0, 0, 300);
+      GL.Vertex3(0, 0, 0); GL.Vertex3(0, 0, 200);
       GL.End();
     }
 #endif    

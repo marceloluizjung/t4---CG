@@ -11,14 +11,14 @@ namespace gcgcg
     private bool exibeVetorNormal = false;
     public Cubo(string rotulo, Objeto paiRef) : base(rotulo, paiRef)
     {      
-      base.PontosAdicionar(new Ponto4D(-1, -1, 1)); // PtoA listaPto[0]
-      base.PontosAdicionar(new Ponto4D(1, -1, 1)); // PtoB listaPto[1]
-      base.PontosAdicionar(new Ponto4D(1, 1, 1)); // PtoC listaPto[2]
-      base.PontosAdicionar(new Ponto4D(-1, 1, 1)); // PtoD listaPto[3]
-      base.PontosAdicionar(new Ponto4D(-1, -1, -1)); // PtoE listaPto[4]
-      base.PontosAdicionar(new Ponto4D(1, -1, -1)); // PtoF listaPto[5]
-      base.PontosAdicionar(new Ponto4D(1, 1, -1)); // PtoG listaPto[6]
-      base.PontosAdicionar(new Ponto4D(-1, 1, -1)); // PtoH listaPto[7]
+      base.PontosAdicionar(new Ponto4D(-0.5, -0.5, 0.5)); // PtoA listaPto[0]
+      base.PontosAdicionar(new Ponto4D(0.5, -0.5, 0.5)); // PtoB listaPto[1]
+      base.PontosAdicionar(new Ponto4D(0.5, 0.5, 0.5)); // PtoC listaPto[2]
+      base.PontosAdicionar(new Ponto4D(-0.5, 0.5, 0.5)); // PtoD listaPto[3]
+      base.PontosAdicionar(new Ponto4D(-0.5, -0.5, -0.5)); // PtoE listaPto[4]
+      base.PontosAdicionar(new Ponto4D(0.5, -0.5, -0.5)); // PtoF listaPto[5]
+      base.PontosAdicionar(new Ponto4D(0.5, 0.5, -0.5)); // PtoG listaPto[6]
+      base.PontosAdicionar(new Ponto4D(-0.5, 0.5, -0.5)); // PtoH listaPto[7]
     }
     
     protected override void DesenharObjeto()
