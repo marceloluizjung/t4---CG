@@ -4,6 +4,7 @@
 
 using OpenTK.Graphics.OpenGL;
 using CG_Biblioteca;
+using System.Drawing;
 using System.Collections.Generic;
 
 // ATENÇÃO: remover: "Privado_"
@@ -39,7 +40,7 @@ namespace gcgcg
 
         public void desenharAbeto()
         {
-            GL.Color3(OpenTK.Color.White);
+            GL.Color3(Color.White);
             GL.Begin(BeginMode.Lines);
             foreach (Ponto4D pto in pontosLista)
             {

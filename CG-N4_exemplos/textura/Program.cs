@@ -14,7 +14,7 @@ namespace textura
   class Mundo : GameWindow
   {
     //FIXME: precisei instalar $ brew install mono-libgdiplus
-    Bitmap bitmap = new Bitmap("logoGCG.png");
+    Bitmap bitmap = new Bitmap("barreira.png");
 
     int texture;
 

@@ -11,6 +11,7 @@ using OpenTK.Graphics.OpenGL;
 using System.Collections.Generic;
 using OpenTK.Input;
 using CG_Biblioteca;
+using System.Drawing;
 
 
 //TODO: arrumar o id dos objetos usando char letra = 'A'; letra++;
@@ -265,11 +266,11 @@ namespace gcgcg
         {
             GL.LineWidth(1);
             GL.Begin(PrimitiveType.Lines);
-            GL.Color3(OpenTK.Color.Red);
+            GL.Color3(Color.Red);
             GL.Vertex3(0, 0, 0); GL.Vertex3(200, 0, 0);
-            GL.Color3(OpenTK.Color.Green);
+            GL.Color3(Color.Green);
             GL.Vertex3(0, 0, 0); GL.Vertex3(0, 200, 0);
-            GL.Color3(OpenTK.Color.Blue);
+            GL.Color3(Color.Blue);
             GL.Vertex3(0, 0, 0); GL.Vertex3(0, 0, 200);
             GL.End();
         }
