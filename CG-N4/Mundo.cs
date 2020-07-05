@@ -53,6 +53,11 @@ namespace gcgcg
         private Cilindro obj_Cilindro;
         private Esfera obj_Esfera;
         private Cone obj_Cone;
+        private Bitmap barreira = new Bitmap("barreira.png");
+        private Bitmap chao = new Bitmap("chao.png");
+        private Bitmap cerca = new Bitmap("cerca.png");
+        private Bitmap tank = new Bitmap("tank.png");
+        private Bitmap tankInimigo = new Bitmap("tank-inimigo.png");
 
         protected override void OnLoad(EventArgs e)
         {
@@ -62,60 +67,60 @@ namespace gcgcg
             Console.WriteLine(" [  H     ] mostra teclas usadas. ");
 
             //Chão
-            obj_Cubo = new Cubo("Chao", null);
+            obj_Cubo = new Cubo("Chao", null, chao);
             objetosLista.Add(obj_Cubo);
             obj_Cubo.EscalaXYZ(1000, 1, 1000);
             obj_Cubo.TranslacaoXYZ(3, -1, 2);
 
             //Cerca
-            obj_Cubo = new Cubo("Cerca1", null);
+            obj_Cubo = new Cubo("Cerca1", null, cerca);
             objetosLista.Add(obj_Cubo);
             obj_Cubo.EscalaXYZ(30, 100, 1000);
             obj_Cubo.TranslacaoXYZ(485, 55, 0);
 
-            obj_Cubo = new Cubo("Cerca2", null);
+            obj_Cubo = new Cubo("Cerca2", null, cerca);
             objetosLista.Add(obj_Cubo);
             obj_Cubo.EscalaXYZ(1000, 100, 30);
             obj_Cubo.TranslacaoXYZ(0, 55, -485);
 
-            obj_Cubo = new Cubo("Cerca3", null);
+            obj_Cubo = new Cubo("Cerca3", null, cerca);
             objetosLista.Add(obj_Cubo);
             obj_Cubo.EscalaXYZ(30, 100, 1000);
             obj_Cubo.TranslacaoXYZ(-485, 55, 0);
 
-            obj_Cubo = new Cubo("Cerca4", null);
+            obj_Cubo = new Cubo("Cerca4", null, cerca);
             objetosLista.Add(obj_Cubo);
             obj_Cubo.EscalaXYZ(1000, 100, 30);
             obj_Cubo.TranslacaoXYZ(0, 55, 485);
 
             //Barreira
-            obj_Cubo = new Cubo("Barreira1", null);
+            obj_Cubo = new Cubo("Barreira1", null, barreira);
             objetosLista.Add(obj_Cubo);
             obj_Cubo.EscalaXYZ(100, 100, 100);
             obj_Cubo.TranslacaoXYZ(420, 55, -298);
 
-            obj_Cubo = new Cubo("Barreira2", null);
+            obj_Cubo = new Cubo("Barreira2", null, barreira);
             objetosLista.Add(obj_Cubo);
             obj_Cubo.EscalaXYZ(100, 100, 100);
             obj_Cubo.TranslacaoXYZ(-420, 55, 298);
 
-            obj_Cubo = new Cubo("Barreira3", null);
+            obj_Cubo = new Cubo("Barreira3", null, barreira);
             objetosLista.Add(obj_Cubo);
             obj_Cubo.EscalaXYZ(650, 100, 100);
             obj_Cubo.TranslacaoXYZ(0, 55, 0);
 
             //Personagens
-                //Inimigos
-                obj_Cubo = new Cubo("Inimigo01", null);
-                objetosLista.Add(obj_Cubo);
-                obj_Cubo.EscalaXYZ(100, 100, 100);
-                obj_Cubo.TranslacaoXYZ(0, 55, -350);
+            //Inimigos
+            obj_Cubo = new Cubo("Inimigo01", null, tankInimigo);
+            objetosLista.Add(obj_Cubo);
+            obj_Cubo.EscalaXYZ(100, 1, 100);
+            obj_Cubo.TranslacaoXYZ(0, 55, -350);
 
-                //Eu
-                obj_Cubo = new Cubo("Personagem", null);
-                objetosLista.Add(obj_Cubo);
-                obj_Cubo.EscalaXYZ(100, 100, 100);
-                obj_Cubo.TranslacaoXYZ(0, 55, 350);
+            //Eu
+            obj_Cubo = new Cubo("Personagem", null, tank);
+            objetosLista.Add(obj_Cubo);
+            obj_Cubo.EscalaXYZ(100, 1, 100);
+            obj_Cubo.TranslacaoXYZ(0, 55, 350);
 
             objetoSelecionado = obj_Cubo;
 
