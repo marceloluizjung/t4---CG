@@ -60,7 +60,14 @@ namespace gcgcg
         private Bitmap tankLeft = new Bitmap("tank-left.png");
         private Bitmap tankRight = new Bitmap("tank-right.png");
         private Bitmap tankBack = new Bitmap("tank-back.png");
-        private Bitmap tankInimigo = new Bitmap("tank-inimigo.png");
+        private Bitmap tankInimigoFront = new Bitmap("tank-inimigo-front.png");
+        private Bitmap tankInimigoLeft = new Bitmap("tank-inimigo-left.png");
+        private Bitmap tankInimigoRight = new Bitmap("tank-inimigo-right.png");
+        private Bitmap tankInimigoBack = new Bitmap("tank-inimigo-back.png");
+
+
+        private Cubo inimgo;
+        private Cubo personagem;
 
         protected override void OnLoad(EventArgs e)
         {
@@ -114,13 +121,15 @@ namespace gcgcg
 
             //Personagens
             //Inimigos
-            obj_Cubo = new Cubo("Inimigo01", null, tankInimigo);
+            obj_Cubo = new Cubo("Inimigo01", null, tankInimigoBack);
+            this.inimgo = obj_Cubo;
             objetosLista.Add(obj_Cubo);
             obj_Cubo.EscalaXYZ(100, 1, 100);
             obj_Cubo.TranslacaoXYZ(0, 55, -350);
 
             //Eu
             obj_Cubo = new Cubo("Personagem", null, tankFront);
+            this.personagem = obj_Cubo;
             objetosLista.Add(obj_Cubo);
             obj_Cubo.EscalaXYZ(100, 1, 100);
             obj_Cubo.TranslacaoXYZ(0, 55, 350);
@@ -217,26 +226,58 @@ namespace gcgcg
                 //TODO: não está atualizando a BBox com as transformações geométricas
                 else if (e.Key == Key.Left)
                 {
-                    Cubo cubo = (Cubo)objetoSelecionado;
+                    objetoSelecionado = this.personagem;
+                    Cubo cubo = this.personagem;
                     cubo.updateImage(tankLeft);
                     objetoSelecionado.TranslacaoXYZ(-10, 0, 0);
                 }
                 else if (e.Key == Key.Right)
                 {
-                    Cubo cubo = (Cubo)objetoSelecionado;
+                    objetoSelecionado = this.personagem;
+                    Cubo cubo = this.personagem;
                     cubo.updateImage(tankRight);
                     objetoSelecionado.TranslacaoXYZ(10, 0, 0);
                 }
                 else if (e.Key == Key.Up)
                 {
-                    Cubo cubo = (Cubo)objetoSelecionado;
+                    objetoSelecionado = this.personagem;
+                    Cubo cubo = this.personagem;
                     cubo.updateImage(tankFront);
                     objetoSelecionado.TranslacaoXYZ(0, 0, -10);
                 }
                 else if (e.Key == Key.Down)
                 {
-                    Cubo cubo = (Cubo)objetoSelecionado;
+                    objetoSelecionado = this.personagem;
+                    Cubo cubo = this.personagem;
                     cubo.updateImage(tankBack);
+                    objetoSelecionado.TranslacaoXYZ(0, 0, 10);
+                }
+                else if (e.Key == Key.A)
+                {
+                    objetoSelecionado = this.inimgo;
+                    Cubo cubo = this.inimgo;
+                    cubo.updateImage(tankInimigoLeft);
+                    objetoSelecionado.TranslacaoXYZ(-10, 0, 0);
+                }
+                else if (e.Key == Key.D)
+                {
+                    objetoSelecionado = this.inimgo;
+                    Cubo cubo = this.inimgo;
+                    cubo.updateImage(tankInimigoRight);
+                    objetoSelecionado.TranslacaoXYZ(10, 0, 0);
+                }
+                else if (e.Key == Key.W)
+                {
+                    objetoSelecionado = this.inimgo;
+                    Cubo cubo = this.inimgo;
+                    cubo.updateImage(tankInimigoFront);
+                    objetoSelecionado.TranslacaoXYZ(0, 0, -10);
+                }
+                else if (e.Key == Key.S)
+                {
+                    objetoSelecionado = this.inimgo;
+                    Cubo cubo = this.inimgo;
+                    cubo.updateImage(tankInimigoBack);
                     objetoSelecionado.TranslacaoXYZ(0, 0, 10);
                 }
                 else if (e.Key == Key.Number8)

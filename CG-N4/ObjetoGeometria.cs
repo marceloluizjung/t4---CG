@@ -49,6 +49,10 @@ namespace gcgcg
       pontosLista[posicao] = pto;
     }
 
+    public string getRotulo (){ 
+      return this.rotulo;
+    }
+
     public override string ToString()
     {
       string retorno;
