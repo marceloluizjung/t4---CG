@@ -56,7 +56,10 @@ namespace gcgcg
         private Bitmap barreira = new Bitmap("barreira.png");
         private Bitmap chao = new Bitmap("chao.png");
         private Bitmap cerca = new Bitmap("cerca.png");
-        private Bitmap tank = new Bitmap("tank.png");
+        private Bitmap tankFront = new Bitmap("tank-front.png");
+        private Bitmap tankLeft = new Bitmap("tank-left.png");
+        private Bitmap tankRight = new Bitmap("tank-right.png");
+        private Bitmap tankBack = new Bitmap("tank-back.png");
         private Bitmap tankInimigo = new Bitmap("tank-inimigo.png");
 
         protected override void OnLoad(EventArgs e)
@@ -117,7 +120,7 @@ namespace gcgcg
             obj_Cubo.TranslacaoXYZ(0, 55, -350);
 
             //Eu
-            obj_Cubo = new Cubo("Personagem", null, tank);
+            obj_Cubo = new Cubo("Personagem", null, tankFront);
             objetosLista.Add(obj_Cubo);
             obj_Cubo.EscalaXYZ(100, 1, 100);
             obj_Cubo.TranslacaoXYZ(0, 55, 350);
@@ -213,13 +216,29 @@ namespace gcgcg
                     objetoSelecionado.AtribuirIdentidade();
                 //TODO: não está atualizando a BBox com as transformações geométricas
                 else if (e.Key == Key.Left)
+                {
+                    Cubo cubo = (Cubo)objetoSelecionado;
+                    cubo.updateImage(tankLeft);
                     objetoSelecionado.TranslacaoXYZ(-10, 0, 0);
+                }
                 else if (e.Key == Key.Right)
+                {
+                    Cubo cubo = (Cubo)objetoSelecionado;
+                    cubo.updateImage(tankRight);
                     objetoSelecionado.TranslacaoXYZ(10, 0, 0);
+                }
                 else if (e.Key == Key.Up)
+                {
+                    Cubo cubo = (Cubo)objetoSelecionado;
+                    cubo.updateImage(tankFront);
                     objetoSelecionado.TranslacaoXYZ(0, 0, -10);
+                }
                 else if (e.Key == Key.Down)
+                {
+                    Cubo cubo = (Cubo)objetoSelecionado;
+                    cubo.updateImage(tankBack);
                     objetoSelecionado.TranslacaoXYZ(0, 0, 10);
+                }
                 else if (e.Key == Key.Number8)
                     objetoSelecionado.TranslacaoXYZ(0, 0, 10);
                 else if (e.Key == Key.Number9)
